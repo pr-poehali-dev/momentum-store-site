@@ -1,13 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import HeroBanner from "@/components/home/HeroBanner";
+import Features from "@/components/home/Features";
+import About from "@/components/home/About";
+import PageTransition from "@/components/layout/PageTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>Momentum - Интернет-магазин часов</title>
+        <meta name="description" content="Momentum - первый в Луганске специализированный интернет-магазин качественных реплик популярных часовых брендов." />
+      </Helmet>
+      
+      <Header />
+      
+      <PageTransition>
+        <main>
+          <HeroBanner />
+          <Features />
+          <About />
+        </main>
+      </PageTransition>
+      
+      <Footer />
+    </>
   );
 };
 
